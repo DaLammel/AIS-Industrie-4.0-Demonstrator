@@ -45,9 +45,6 @@ namespace AIS_Demonstrator.Fragments
 
             _textOptionMachine = _view.FindViewById<TextView>(Resource.Id.textOptionMachine);
             _textOptionMachine.Click += OptionMachine_Click;
-            //Use this in addition if Login is disabled
-            _textOptionMachine.Enabled = false;
-            _textOptionMachine.SetBackgroundColor(Color.Gray);
 
             _textOptionCostSetting = _view.FindViewById<TextView>(Resource.Id.textOptionCostSetting);
             _textOptionCostSetting.Click += OptionCostSetting_Click;
