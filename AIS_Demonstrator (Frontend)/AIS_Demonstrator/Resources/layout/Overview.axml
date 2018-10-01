@@ -103,6 +103,20 @@
         android:textSize="18sp"
         android:textColor="#000"
         android:text="Maschinendaten Aktualisieren" />
+    <TextView
+        android:id="@+id/togglePower"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="6sp"
+        android:layout_marginTop="6sp"
+        android:paddingLeft="18sp"
+        android:paddingTop="2sp"
+        android:paddingBottom="2sp"
+        android:background="@android:color/white"
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:text="Kaffeemaschine An-/Ausschalten" />
     <LinearLayout
         android:id="@+id/ContainerMachineState"
         android:layout_width="fill_parent"
@@ -143,7 +157,7 @@
                 android:gravity="center"
                 android:textColor="#000"
                 android:textSize="14sp"
-                android:text="Wasser-\nstand" />
+                android:text="Wasser" />
         </RelativeLayout>
     <!--Bean Level-->
         <RelativeLayout
@@ -177,7 +191,7 @@
                 android:gravity="center"
                 android:textColor="#000"
                 android:textSize="14sp"
-                android:text="Bohnen-\nstand" />
+                android:text="Bohnen" />
         </RelativeLayout>
     <!--Clean Level-->
         <RelativeLayout

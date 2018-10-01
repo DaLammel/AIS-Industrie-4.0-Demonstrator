@@ -3676,6 +3676,9 @@ namespace AIS_Demonstrator
 			public static int title_template = 2131492995;
 			
 			// aapt resource value: 0
+			public static int togglePower = 0;
+			
+			// aapt resource value: 0
 			public static int toolbar = 0;
 			
 			// aapt resource value: 2131492996

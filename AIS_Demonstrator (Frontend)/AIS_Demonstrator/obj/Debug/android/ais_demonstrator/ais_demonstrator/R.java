@@ -3329,12 +3329,12 @@ containing a value of this type.
     }
     public static final class id {
         public static final int ALT=0x7f080032;
-        public static final int BeanLevel1=0x7f080101;
-        public static final int BeanLevel2=0x7f080102;
+        public static final int BeanLevel1=0x7f080102;
+        public static final int BeanLevel2=0x7f080103;
         public static final int CTRL=0x7f080033;
-        public static final int CleanLevel1=0x7f080103;
-        public static final int CleanLevel2=0x7f080104;
-        public static final int ContainerMachineState=0x7f0800fd;
+        public static final int CleanLevel1=0x7f080104;
+        public static final int CleanLevel2=0x7f080105;
+        public static final int ContainerMachineState=0x7f0800fe;
         public static final int FUNCTION=0x7f080034;
         public static final int META=0x7f080035;
         public static final int OptionPowder=0x7f0800c3;
@@ -3343,8 +3343,8 @@ containing a value of this type.
         public static final int TextViewL=0x7f08009f;
         public static final int TextViewM=0x7f0800a0;
         public static final int TextViewR=0x7f0800a1;
-        public static final int WaterLevel1=0x7f0800fe;
-        public static final int WaterLevel2=0x7f0800ff;
+        public static final int WaterLevel1=0x7f0800ff;
+        public static final int WaterLevel2=0x7f080100;
         public static final int action0=0x7f0800e5;
         public static final int action_bar=0x7f08007c;
         public static final int action_bar_activity_content=0x7f080001;
@@ -3380,7 +3380,7 @@ containing a value of this type.
         public static final int buttonPanel=0x7f080063;
         public static final int buttonPositve=0x7f0800b4;
         public static final int buttonPrepare=0x7f08008e;
-        public static final int buttonSignup=0x7f08010a;
+        public static final int buttonSignup=0x7f08010b;
         public static final int cancel_action=0x7f0800e6;
         public static final int center=0x7f080045;
         public static final int center_horizontal=0x7f080046;
@@ -3429,7 +3429,7 @@ containing a value of this type.
         public static final int icon_group=0x7f0800f3;
         public static final int ifRoom=0x7f08003a;
         public static final int image=0x7f08005f;
-        public static final int imageView1=0x7f080105;
+        public static final int imageView1=0x7f080106;
         public static final int info=0x7f0800ef;
         public static final int italic=0x7f080059;
         public static final int item_touch_helper_previous_elevation=0x7f080000;
@@ -3443,9 +3443,9 @@ containing a value of this type.
         public static final int list_item=0x7f080061;
         public static final int main_content=0x7f080099;
         public static final int main_content2=0x7f0800c2;
-        public static final int masked=0x7f08010d;
+        public static final int masked=0x7f08010e;
         public static final int media_actions=0x7f0800e8;
-        public static final int message=0x7f08010b;
+        public static final int message=0x7f08010c;
         public static final int middle=0x7f080031;
         public static final int mini=0x7f080053;
         public static final int mr_art=0x7f0800d4;
@@ -3549,8 +3549,8 @@ containing a value of this type.
         public static final int textOptionCostOverview=0x7f0800f7;
         public static final int textOptionCostSetting=0x7f0800fa;
         public static final int textOptionMachine=0x7f0800f9;
-        public static final int textOptionName=0x7f080106;
-        public static final int textOptionPassword=0x7f080107;
+        public static final int textOptionName=0x7f080107;
+        public static final int textOptionPassword=0x7f080108;
         public static final int textOptionPay=0x7f08009b;
         public static final int textOptionProfile=0x7f0800f6;
         public static final int textSpacerNoButtons=0x7f08006a;
@@ -3564,7 +3564,7 @@ containing a value of this type.
         public static final int textStat4=0x7f080094;
         public static final int textStat41=0x7f080098;
         public static final int textView1=0x7f0800b8;
-        public static final int textWaterLevel=0x7f080100;
+        public static final int textWaterLevel=0x7f080101;
         public static final int text_input_password_toggle=0x7f0800af;
         public static final int textinput_counter=0x7f080014;
         public static final int textinput_error=0x7f080015;
@@ -3572,6 +3572,7 @@ containing a value of this type.
         public static final int title=0x7f08001c;
         public static final int titleDividerNoCustom=0x7f080071;
         public static final int title_template=0x7f08006f;
+        public static final int togglePower=0x7f0800fd;
         public static final int toolbar=0x7f0800c5;
         public static final int top=0x7f08003e;
         public static final int topPanel=0x7f08006e;
@@ -3586,15 +3587,15 @@ containing a value of this type.
         public static final int txtMilkQuantity=0x7f0800b6;
         public static final int txtNewPassword=0x7f0800b2;
         public static final int txtOldPassword=0x7f0800b1;
-        public static final int txtPassword1=0x7f080108;
-        public static final int txtPassword2=0x7f080109;
+        public static final int txtPassword1=0x7f080109;
+        public static final int txtPassword2=0x7f08010a;
         public static final int txtUserName=0x7f0800b0;
         public static final int uniform=0x7f08002d;
         public static final int up=0x7f080009;
         public static final int useLogo=0x7f080026;
         public static final int view1=0x7f08009d;
         public static final int view_offset_helper=0x7f080016;
-        public static final int visible=0x7f08010c;
+        public static final int visible=0x7f08010d;
         public static final int volume_item_container=0x7f0800da;
         public static final int withText=0x7f08003c;
         public static final int wrap_content=0x7f08002e;

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using AIS_Demonstrator.Dialogs;
 using Android.App;
 using Android.Graphics;
@@ -10,7 +11,11 @@ using Android.Support.V4.View;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
+using AlertDialog = Android.Support.V7.App.AlertDialog;
 using FragmentTransaction = Android.Support.V4.App.FragmentTransaction;
+
+// Added for OPC UA Support
+using Opc.Ua;
 
 namespace AIS_Demonstrator.Fragments
 {
@@ -21,9 +26,9 @@ namespace AIS_Demonstrator.Fragments
         private TextView _textOptionMachine;
         private TextView _textOptionCostSetting;
         private TextView _textOptionRefresh;
+        private TextView _textOptionPower;
         private View _view;
         private ViewPager _pager;
-
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             base.OnCreateView(inflater, container, savedInstanceState);
@@ -59,6 +64,10 @@ namespace AIS_Demonstrator.Fragments
             _textOptionRefresh = _view.FindViewById<TextView>(Resource.Id.refreshMachineState);
             _textOptionRefresh.Click += OptionRefresh_Click;
 
+            // Click handler for the "Kaffeemaschine An-/Ausschalten" button. Added for OPC UA Support
+            _textOptionPower = _view.FindViewById<TextView>(Resource.Id.togglePower);
+            _textOptionPower.Click += OptionPower_Click;
+
             SetupContainerMachineState(ref MainActivity.OpcClient.valueCoffeeLevel, ref MainActivity.OpcClient.valueWaterLevel, ref MainActivity.OpcClient.valueCleanlinessLevel);
             return _view;
         }
@@ -87,6 +96,43 @@ namespace AIS_Demonstrator.Fragments
         {
             SetupContainerMachineState(ref MainActivity.OpcClient.valueCoffeeLevel, ref MainActivity.OpcClient.valueWaterLevel, ref MainActivity.OpcClient.valueCleanlinessLevel);
             _view.RefreshDrawableState();
+        }
+
+        // Click Handler: Power Button that calls the OPC UA Power method in order to turn the Coffee Machine on/off
+        private void OptionPower_Click(object sender, EventArgs e)
+        {
+            // Variables for handling the Method Call Result
+            IList<object> callpowerMethodResult = null;
+            string resultMessage = "Fehler: Kommunikation mit dem Backend ist fehlgeschlagen";  // default value is overwritten later when the toButton Method is successfully called.
+
+            NodeId ObjectNodeID = NodeId.Parse("ns=1;s=CoffeeOrder");
+            NodeId MethodNodeID = NodeId.Parse("ns=1;s=powerMethod");
+
+            //Create Alert Dialog
+            AlertDialog.Builder alert = new AlertDialog.Builder(Activity);
+            alert.SetTitle("Kaffeemaschine An-/Ausschalten");
+            alert.SetMessage("Achtung: möchten Sie wirklich den Power-Button der Kaffeemaschine betätigen?");
+            alert.SetPositiveButton("Ja", (senderAlert, args) => {
+                if (MainActivity.OpcClient.session.Connected) {
+                    // Actually call the power Button method
+                    callpowerMethodResult = MainActivity.OpcClient.session.Call(ObjectNodeID, MethodNodeID, null);
+                    foreach (var x in callpowerMethodResult)
+                    {
+                        resultMessage = x.ToString();
+                    }
+                }
+                Toast.MakeText(Activity, resultMessage, ToastLength.Short).Show();
+            });
+            alert.SetNegativeButton("Nein", (senderAlert, args) => {
+                Toast.MakeText(Activity, "Abgebrochen", ToastLength.Short).Show();
+            });
+            alert.Show();
+        }
+
+        //Create Alert Dialog For Power Button Click Handler
+        private void CreateAlertPower()
+        {
+            
         }
 
         //Show Machine Setting DialogFragment
